@@ -9,3 +9,10 @@ func TestLargest(t *testing.T){
 		t.Error("expected",expected,"but got",actual)
 	}
 }
+func TestLargest1(t *testing.T){
+	actual := Largest([]int{5,6,7,8})
+	expected := 8
+	if actual != expected{
+		t.Error("expected",expected,"but got",actual)
+	}
+}
