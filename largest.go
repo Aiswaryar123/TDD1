@@ -9,3 +9,12 @@ func Largest(array[]int)int{
 	}
 	return largest
 }
+func Smallest(array[]int)int{
+	smallest := array[0]
+	for _,value :=range array{
+		if value<smallest{
+			smallest=value
+		}
+	}
+	return smallest
+}
