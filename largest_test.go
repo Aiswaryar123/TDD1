@@ -23,3 +23,11 @@ func Testsmallest(t *testing.T){
 		t.Error("expected",expected,"but got",actual)
 	}
 }
+func TestAverage(t *testing.T){
+	
+	actual := Average([]int{1, 2, 3})
+	expected := 2.0
+	if actual != expected {
+		t.Error("expected",expected,"but got",actual)
+	}
+}
