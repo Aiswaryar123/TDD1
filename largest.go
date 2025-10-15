@@ -18,3 +18,13 @@ func Smallest(array[]int)int{
 	}
 	return smallest
 }
+func Average(arr []int) float64 {
+	sum := 0
+
+	for _, value := range arr {
+		sum += value
+	}
+
+	average := float64(sum) / float64(len(arr))
+	return average
+}
