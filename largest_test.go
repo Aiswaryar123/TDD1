@@ -16,3 +16,10 @@ func TestLargest1(t *testing.T){
 		t.Error("expected",expected,"but got",actual)
 	}
 }
+func Testsmallest(t *testing.T){
+	actual := Smallest([]int{1,2,3,4})
+	expected:=1
+	if actual!=expected{
+		t.Error("expected",expected,"but got",actual)
+	}
+}
