@@ -1,4 +1,5 @@
 package main
+import "fmt"
 
 func Largest(array[]int)int{
 	largest := array[0]
@@ -27,4 +28,10 @@ func Average(arr []int) float64 {
 
 	average := float64(sum) / float64(len(arr))
 	return average
+}
+func main (){
+	fmt.Println(Largest([]int{1,2,3,4}))
+	fmt.Println(Smallest([]int{1,2,3,4}))
+	fmt.Printf("%.2f\n",Average([]int{1,2,3}))
+
 }
