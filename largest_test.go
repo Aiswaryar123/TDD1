@@ -1,33 +1,55 @@
 package main
 
-import "testing"
+import (
+	"math"
+	"testing"
+)
 
-func TestLargest(t *testing.T){
-	actual := Largest([]int{1,2,3,4})
-	expected := 4
-	if actual != expected{
-		t.Error("expected",expected,"but got",actual)
+func TestLargest(t *testing.T) {
+	l, _, _ := analyzeNumbers([]int{1, 2, 3})
+	expected := 3
+	if l != expected {
+		t.Errorf("Expected is %d but got %d", expected, l)
 	}
 }
-func TestLargest1(t *testing.T){
-	actual := Largest([]int{5,6,7,8})
-	expected := 8
-	if actual != expected{
-		t.Error("expected",expected,"but got",actual)
+
+func TestLargest2(t *testing.T) {
+	l, _, _ := analyzeNumbers([]int{9, 7, 4})
+	expected := 9
+	if l != expected {
+		t.Errorf("Expected is %d but got %d", expected, l)
 	}
 }
-func Testsmallest(t *testing.T){
-	actual := Smallest([]int{1,2,3,4})
-	expected:=1
-	if actual!=expected{
-		t.Error("expected",expected,"but got",actual)
+
+func TestSmallest(t *testing.T) {
+	_, s, _ := analyzeNumbers([]int{1, 2, 3})
+	expected := 1
+	if s != expected {
+		t.Errorf("Expected is %d but got %d", expected, s)
 	}
 }
-func TestAverage(t *testing.T){
-	
-	actual := Average([]int{1, 2, 3})
+
+func TestSmallest2(t *testing.T) {
+	_, s, _ := analyzeNumbers([]int{4, 5, 2})
+	expected := 2
+	if s != expected {
+		t.Errorf("Expected is %d but got %d", expected, s)
+	}
+}
+
+func TestAverage(t *testing.T) {
+	_, _, a := analyzeNumbers([]int{1, 2, 3})
 	expected := 2.0
-	if actual != expected {
-		t.Error("expected",expected,"but got",actual)
+	if a != expected {
+		t.Errorf("Expected is %.2f but got %.2f", expected, a)
+	}
+}
+
+func TestAverage2(t *testing.T) {
+	_, _, a := analyzeNumbers([]int{5, 8, 6})
+	expected := 6.33
+	a = math.Round(a*100) / 100
+	if a != expected {
+		t.Errorf("Expected is %.2f but got %.2f", expected, a)
 	}
 }
